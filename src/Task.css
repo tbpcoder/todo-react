@@ -1,3 +1,38 @@
 li{
-    background-color: rgb(88, 180, 255);
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    overflow: scroll;
+    gap: 10px;
+}
+
+.Taskitems *{
+    margin: 0px 10px;
+}
+
+.btns{
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+@media (max-width: 600px) {
+    ul{
+        height: 390px;
+        border: 1px solid black;
+        border-bottom: 0;
+        padding: 10px;
+    }
 }

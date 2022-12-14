@@ -1,0 +1,58 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    height: 80vh;
+}
+
+.count{
+    width: 15em;
+}
+
+.listandform{
+    margin: 10px auto;
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.divider{
+    border: 1px solid black;
+    width: 100%;
+    margin: 30px 0 0 0;
+}
+
+h1{
+    position: relative;
+    left: 20px;
+}
+
+@media (max-width: 600px) {
+    .App{
+        height: 560px;
+    }
+
+    .listandform{
+        width: 100%;
+    }
+
+    .divider{
+        display: none;
+    }
+
+    h1{
+        position: static;
+    }
+}

@@ -27,8 +27,10 @@ const Task = ({items, setItems, count, setCount}) => {
         <>
             {items.map((item, index) => (
                 <li key={index}>
-                    <input type="checkbox" checked={items[index].done} onChange={(event) => handleClick(event, index)} />
-                    {item.task}
+                    <div className='Taskitems'>
+                        <input type="checkbox" checked={items[index].done} onChange={(event) => handleClick(event, index)} />
+                        {item.task}
+                    </div>
                     <div className="btns">
                         <button onClick={(event) => handleEdit(event, index)}>Edit</button>
                         <button onClick={(event) => handleDelete(event, index)}>Delete</button>

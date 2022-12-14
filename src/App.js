@@ -27,14 +27,17 @@ function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <h3>Tasks left to be done: {count}</h3>
-      <ul>
-        <Task items = {items} setItems = {setItems} count = {count} setCount = {setCount} />
-      </ul>
-      <form id = 'form'>
-        Task: <input type="text" onChange={handleChange} />
-        <button type="submit" onClick={handleClick}>Add</button>
-      </form>
+      <div className="count">Tasks left to be done: {count}</div>
+      <div className="listandform">
+        <form id = 'form'>
+          Task: <input type="text" onChange={handleChange} />
+          <button type="submit" onClick={handleClick}>Add</button>
+        </form>
+        <div className="divider"></div>
+        <ul>
+          <Task items = {items} setItems = {setItems} count = {count} setCount = {setCount} />
+        </ul>
+      </div>
     </div>
 
   );
