@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import Task from "./Task";
+import './App.css'
 function App() {
+  const [items, setItems] = useState([])
+  const [value, setValue] = useState('')
+  const [count, setCount] = useState(0)
+  let index = 0
+  const handleChange = (event) => {
+    setValue(event.target.value)
+  }
+
+  const handleClick = (event) => {
+    event.preventDefault()
+    if(value)
+    {
+      setItems([...items, {
+        task: value,
+        done: false
+      }])
+      document.getElementById('form').reset()
+      setCount(count+1)
+    }
+    setValue('')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Todo List</h1>
+      <h3>Tasks left to be done: {count}</h3>
+      <ul>
+        <Task items = {items} setItems = {setItems} count = {count} setCount = {setCount} />
+      </ul>
+      <form id = 'form'>
+        Task: <input type="text" onChange={handleChange} />
+        <button type="submit" onClick={handleClick}>Add</button>
+      </form>
     </div>
+
   );
 }
 
